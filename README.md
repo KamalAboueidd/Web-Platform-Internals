@@ -173,3 +173,5 @@ async function addFriend() {
  - Storing large chunks of data fetched from an API to avoid redundant network requests.
 
  - Managing heavy client-side caching for complex apps alongside Service Workers.
+
+ ![IndexDB](هىيثء.png)
