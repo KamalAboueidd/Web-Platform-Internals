@@ -175,3 +175,66 @@ async function addFriend() {
  - Managing heavy client-side caching for complex apps alongside Service Workers.
 
  ![IndexDB](هىيثء.png)
+
+ ## COOKIES
+  - The Cookie is a small message from a web server passed to the user's browser when you visit a website. 
+  - In other words, Cookies are small text files of information created/updated when visiting a website and stored on the user's web browser.
+  - Cookies help websites remember users and track their activities to provide a personalised experience.
+ # cookies uses
+  - Authentication In Websites
+  - Cart in E-commerce
+  # types of cookies
+  + There are several types of cookies which serve a unique functionality of use. We will discuss the 4 main types of cookies.
+
+ - Session cookies
+ - Persistent cookies
+ - First-party cookies
+ - Third-party cookies
+ ```js
+
+    function setCookie(name, value, daysToExpire) {
+        const date = new Date();
+        date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + "; " + expires;
+        console.log(name+" cookie created");
+    }
+
+    // read cookie
+    function getCookie(name) {
+        console.log(document.cookie);
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const cookies = decodedCookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            if (cookie.indexOf(name + "=") === 0) {
+                return cookie.substring(name.length + 1);
+            }
+        }
+        return null;
+    }
+
+    // delete cookie
+    function deleteCookie(name) {
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        console.log(name+" cookie deleted");
+    }
+
+    // Set a cookie
+    setCookie("userLanguage", "en-US", 30);
+
+    // Read a cookie
+    const language = getCookie("userLanguage");
+    console.log("User's language: " + language);
+
+    // Delete a cookie
+    deleteCookie("userLanguage");
+
+```
+![Cookies](cookie-basic-example.png)
+![Cookies](cokkie.png)
+![Cookies](AuthExCookies.png)
+![Cookies](PostCreationWithSEssionInCokkies.png)
+![Cookies](Cookies.png)
+![Cookies](info.png)
+![Cookies](Saving.png)
