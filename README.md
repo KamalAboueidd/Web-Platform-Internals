@@ -238,3 +238,17 @@ async function addFriend() {
 ![Cookies](Cookies.png)
 ![Cookies](info.png)
 ![Cookies](Saving.png)
+
+
+###  Browser Cache API (Offline-First Storage) for Progressive Web Apps (PWAs)
+
+The **Cache API** is a specialized browser storage mechanism designed to store complete network requests and responses (`Request` and `Response` pairs) locally.
+ - a browser-level storage mechanism that allows developers to programmatically save and retrieve network requests and their corresponding responses
+#### Key Features:
+* **Asset & Request Caching:** Stores static code files (HTML, CSS, JS, images) as well as API responses.
+* **Offline Support:** Empowers Progressive Web Apps (PWAs) to load and function seamlessly even when the user loses internet connection.
+* **Asynchronous Execution:** Built entirely on **Promises**, ensuring it runs in the background without blocking the browser's Main Thread.
+* **Integration:** Works hand-in-hand with **Service Workers** to intercept network requests and serve cached content dynamically.
+
+
+![cacheApi](CacheApi.png)
